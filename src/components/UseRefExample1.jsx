@@ -1,5 +1,7 @@
 import { useRef } from 'react';
 
+// Using UseRef to get CURRENT STATE of DOM element
+
 function UseRefExample1() {
     const inputRef = useRef();
     const paraRef = useRef();
