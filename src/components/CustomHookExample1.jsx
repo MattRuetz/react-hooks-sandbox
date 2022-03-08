@@ -1,11 +1,22 @@
-import useFetch from '../hooks/UseFetch';
+import useFetch from '../hooks/useFetch';
 
 function CustomHookExample1() {
-    const res = useFetch('https://jsonplaceholder.typicode.com/posts', {});
+    const { data, loading, error } = useFetch(
+        'https://jsonplaceholder.typicode.com/posts',
+        {}
+    );
 
-    console.log(res);
+    error && console.log(error);
 
-    return <div>CustomHookExample1</div>;
+    return loading ? (
+        <h1>Loading...</h1>
+    ) : (
+        <div>
+            {data.map((item) => (
+                <h3 key={item.id}>{item.title}</h3>
+            ))}
+        </div>
+    );
 }
 
 export default CustomHookExample1;
