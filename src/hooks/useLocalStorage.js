@@ -7,6 +7,7 @@ function getLocalStorageValue(key, initialValue) {
 
 function useLocalStorage(key, initialValue) {
     const [localStorageValue, setLocalStorageValue] = useState(() =>
+        //init - load from localStorage
         getLocalStorageValue(key, initialValue)
     );
 
