@@ -18,8 +18,8 @@ function UseCallbackExample() {
 }
 
 export default UseCallbackExample;
-// Button component
 
+// Button component
 const AddButton = React.memo(({ addTask }) => {
     console.log('Button rendered');
 
